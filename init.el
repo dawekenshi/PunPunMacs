@@ -69,7 +69,13 @@
   :init
   (which-key-mode))
 
-(setq lsp-log-io nil) ;; Don't log everything = speed
+
+(use-package yasnippet
+  :config
+  (setq yas-snippet-dirs '("c:/homu/snippets"))
+  (yas-global-mode 1))
+
+(setq lsp-log-io nil)
 (setq lsp-keymap-prefix "C-c l")
 (setq lsp-restart 'auto-restart)
 (setq lsp-ui-sideline-show-diagnostics t)
@@ -218,12 +224,14 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(modus-vivendi))
+ '(custom-enabled-themes '(gruber-darker))
+ '(custom-safe-themes
+   '("ba4ab079778624e2eadbdc5d9345e6ada531dc3febeb24d257e6d31d5ed02577" default))
  '(package-selected-packages
-   '(treemacs-evil lsp-ui lsp-mode emmet-mode elcord company evil-collection evil beacon which-key)))
+   '(js-react-redux-yasnippets gruber-darker-theme treemacs-evil lsp-ui lsp-mode emmet-mode elcord company evil-collection evil which-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:inherit nil :extend nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 187 :width normal :foundry "outline" :family "Iosevka Comfy")))))
+ '(default ((t (:inherit nil :extend nil :stipple nil :background "#000000" :foreground "#ffffff" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight regular :height 160 :width normal :foundry "outline" :family "Iosevka Comfy")))))
